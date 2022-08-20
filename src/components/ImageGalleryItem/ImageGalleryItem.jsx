@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const ImageGalleryItem = ({ pictures, toggleModal}) => {
+const ImageGalleryItem = ({ pictures, onOpenModal}) => {
     return (
         <>
             {pictures.map(({ id, webformatURL, largeImageURL, tags }) => 
-                <li key={id} className="ImageGalleryItem" onClick={() => toggleModal(largeImageURL)}>
+                <li key={id} className="ImageGalleryItem" onClick={() => onOpenModal(largeImageURL)}>
                     <img className="ImageGalleryItem-image" src={webformatURL} alt={tags} />
                 </li>
             )}
@@ -15,6 +15,6 @@ const ImageGalleryItem = ({ pictures, toggleModal}) => {
 export default ImageGalleryItem;
 
 ImageGalleryItem.propTypes = {
-    pictures: PropTypes.arrayOf(PropTypes.object).isRequired,
-    toggleModal: PropTypes.func.isRequired,
+    pictures: PropTypes.array.isRequired,
+    onOpenModal: PropTypes.func.isRequired,
 };

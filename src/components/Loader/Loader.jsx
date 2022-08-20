@@ -1,8 +1,11 @@
-
+import { ImSpinner9 } from 'react-icons/im';
 
 const Loader = () => {
     return (
-      <div>Loading</div>
+      <div className='Message'>
+        <ImSpinner9 className='Icon Icon-spin'/>
+        Loading...
+      </div>
     )
 }
 
